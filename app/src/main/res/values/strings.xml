@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Who works here</string>
+    <string name="iv_employee">Employee image</string>
+    <string name="tv_employee_name">Jane Doe</string>
+    <string name="tv_employee_email">janedoe@abc.com</string>
+    <string name="tv_employee_phone">(000)000-9999</string>
+    <string name="tv_team_label">Team :</string>
+    <string name="tv_employee_team">Seller</string>
+    <string name="error">Error in something</string>
+
+    <string name="network_unavailable">Please check your network connection and try again.</string>
+    <string name="employees_empty">No employees available</string>
+    <string name="error_fetching_employees">Error fetching employees. Please try again in sometime.</string>
+</resources>
