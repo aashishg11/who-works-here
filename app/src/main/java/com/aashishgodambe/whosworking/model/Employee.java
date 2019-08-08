@@ -8,32 +8,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class Employee {
 
-    @SerializedName("uuid")
-    @Expose
     private String uuid;
-    @SerializedName("full_name")
-    @Expose
     private String fullName;
-    @SerializedName("phone_number")
-    @Expose
     private String phoneNumber;
-    @SerializedName("email_address")
-    @Expose
     private String emailAddress;
-    @SerializedName("biography")
-    @Expose
     private String biography;
-    @SerializedName("photo_url_small")
-    @Expose
     private String photoUrlSmall;
-    @SerializedName("photo_url_large")
     private String photoUrlLarge;
-    @SerializedName("team")
-    @Expose
     private String team;
-    @SerializedName("employee_type")
-    @Expose
-    private String employeeType;
+    private Position employeeType;
 
     public String getUuid() {
         return uuid;
@@ -99,11 +82,11 @@ public class Employee {
         this.team = team;
     }
 
-    public String getEmployeeType() {
+    public Position getEmployeeType() {
         return employeeType;
     }
 
-    public void setEmployeeType(String employeeType) {
+    public void setEmployeeType(Position employeeType) {
         this.employeeType = employeeType;
     }
 

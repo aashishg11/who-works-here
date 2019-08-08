@@ -9,6 +9,7 @@ import android.util.MalformedJsonException;
 import com.aashishgodambe.whosworking.model.ApiResponse;
 import com.aashishgodambe.whosworking.model.Employee;
 import com.aashishgodambe.whosworking.model.EmployeesResponse;
+import com.aashishgodambe.whosworking.model.Position;
 import com.aashishgodambe.whosworking.repositories.ApiRepository;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -59,7 +60,15 @@ public class EmployeeListViewModel extends ViewModel {
                                     current.setPhotoUrlLarge(employee.get("photo_url_large").getAsString());
                                     current.setPhotoUrlSmall(employee.get("photo_url_small").getAsString());
                                     current.setTeam(employee.get("team").getAsString());
-                                    current.setEmployeeType(employee.get("employee_type").getAsString());
+                                    String pos = employee.get("employee_type").getAsString();
+                                    switch (pos){
+                                        case "FULL_TIME":
+                                            current.setEmployeeType(Position.FULL_TIME);
+                                        case "PART_TIME":
+                                            current.setEmployeeType(Position.PART_TIME);
+                                        case "CONTRACTOR":
+                                            current.setEmployeeType(Position.CONTRACTOR);
+                                    }
                                     employeeList.add(current);
                                 }
                                 employees.setEmployees(employeeList);
