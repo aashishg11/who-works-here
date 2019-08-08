@@ -6,4 +6,4 @@ empty json, exception in making the call and malformed json gracefully.
 
 <h2>Testing</h2> 
 I have added unit test to test the viewmodel and some UI test with a mock web server to ensure that the app handles different
-responses gracefully.
+responses gracefully. I have tested the app on a pixel 2 xl emulator.
