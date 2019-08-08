@@ -112,6 +112,7 @@ public class EmployeeListActivityTest {
     @Test
     public void display_error_on_time_out() throws InterruptedException{
         server.setDispatcher(new MockServerDispatcher().new TimeoutDispatcher());
+        // Time out is set to 5 sec in di/NetworkModule
         rule.launchActivity(new Intent());
         Thread.sleep(6000);
         onView(withId(R.id.tv_error)).check(matches(withText("Error fetching employees. Please try again in sometime.")));
