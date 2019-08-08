@@ -109,6 +109,14 @@ public class EmployeeListActivityTest {
         onView(withId(R.id.tv_error)).check(matches(withText("Error fetching employees. Please try again in sometime.")));
     }
 
+    @Test
+    public void display_error_on_time_out() throws InterruptedException{
+        server.setDispatcher(new MockServerDispatcher().new TimeoutDispatcher());
+        rule.launchActivity(new Intent());
+        Thread.sleep(6000);
+        onView(withId(R.id.tv_error)).check(matches(withText("Error fetching employees. Please try again in sometime.")));
+    }
+
     @After
     public void tearDown() throws Exception {
         activity = null;

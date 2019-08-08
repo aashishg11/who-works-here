@@ -28,8 +28,8 @@ public class NetworkModule {
     public OkHttpClient okHttpClient(HttpLoggingInterceptor loggingInterceptor, Interceptor headerInterceptor) {
         return new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .readTimeout(10, TimeUnit.SECONDS)
-                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(5, TimeUnit.SECONDS)
+                .connectTimeout(5, TimeUnit.SECONDS)
                 .addInterceptor(headerInterceptor)
                 .build();
     }

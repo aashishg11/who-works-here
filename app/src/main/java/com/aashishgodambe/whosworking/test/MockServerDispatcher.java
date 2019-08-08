@@ -5,6 +5,7 @@ import com.aashishgodambe.whosworking.utils.Constants;
 import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.RecordedRequest;
+import okhttp3.mockwebserver.SocketPolicy;
 
 public class MockServerDispatcher {
 
@@ -40,6 +41,14 @@ public class MockServerDispatcher {
         }
     }
 
+    public class TimeoutDispatcher extends Dispatcher {
+        private final String TAG = getClass().getSimpleName();
+        @Override
+        public MockResponse dispatch(RecordedRequest request) {
+            return new MockResponse().setResponseCode(200).setBody(Constants.SUCCESS_200_3_EMPLOYEES)
+                    .setSocketPolicy(SocketPolicy.NO_RESPONSE);
+        }
+    }
 
     /**
      * Return error response from mock server
